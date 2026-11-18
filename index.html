@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e85d9e">
+  <meta name="description" content="Mundo Maca 11.11: variedades, buenos precios y pedidos fáciles por WhatsApp.">
+  <title>Mundo Maca 11.11 | Variedades a buen precio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="announcement">✨ Variedades que te encantan, a precios que te sorprenden ✨</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Mundo Maca 11.11 inicio">
+      <span class="brand-mark">M<span>11</span></span>
+      <span class="brand-copy"><strong>Mundo Maca</strong><small>11.11 · Variedades</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#encargos">Encargos especiales</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button cart-trigger" id="openCart" aria-label="Abrir carrito">
+        <span aria-hidden="true">🛍️</span><span class="cart-label">Mi pedido</span><b id="cartCount">0</b>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> BIENVENIDO A MUNDO MACA 11.11</span>
+        <h1>Todo lo que buscas,<br><em>a un precio increíble.</em></h1>
+        <p>Descubre productos para tu día a día, encuentra tus favoritos y haz tu pedido fácil y rápido por WhatsApp.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#catalogo">Explorar productos <span>→</span></a>
+          <a class="button button-quiet" href="#encargos">¿Buscas algo especial?</a>
+        </div>
+        <div class="hero-trust"><span>♡</span> Variedad · Buenos precios · Atención cercana</div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración decorativa de compras">
+        <div class="hero-circle"></div><div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div>
+        <div class="hero-bag"><div class="bag-handle"></div><div class="bag-face">M<span>11.11</span></div><div class="bag-heart">♡</div></div>
+        <div class="floating-tag tag-top">¡Precios increíbles!</div><div class="floating-tag tag-bottom">Tu próximo favorito ✨</div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Beneficios">
+      <div><span class="benefit-icon">♡</span><span><strong>Variedad para ti</strong><small>Encuentra eso que necesitas</small></span></div>
+      <div><span class="benefit-icon">✧</span><span><strong>Precios especiales</strong><small>Compra sin gastar de más</small></span></div>
+      <div><span class="benefit-icon">☏</span><span><strong>Pedido por WhatsApp</strong><small>Atención directa y cercana</small></span></div>
+    </section>
+
+    <section class="catalog-section section-wrap" id="catalogo">
+      <div class="section-heading">
+        <div><span class="eyebrow">NUESTRO CATÁLOGO</span><h2>Encuentra algo que te encante</h2><p>Explora nuestras variedades y arma tu pedido.</p></div>
+        <div class="catalog-count" id="catalogCount">Productos disponibles</div>
+      </div>
+      <div class="catalog-tools">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar productos..." aria-label="Buscar productos"></label>
+        <div class="category-list" id="categoryFilters" aria-label="Filtrar por categoría"></div>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><span>♡</span><h3>No encontramos productos</h3><p>Prueba con otra búsqueda o pregúntanos por WhatsApp.</p><a href="#encargos" class="text-link">Solicitar un producto →</a></div>
+    </section>
+
+    <section class="request-section" id="encargos">
+      <div class="request-inner">
+        <div class="request-illustration"><div class="request-orbit">✦</div><div class="request-box">?</div><span class="request-star">✧</span></div>
+        <div class="request-copy"><span class="eyebrow">¿NO LO ENCUENTRAS?</span><h2>¡También lo podemos buscar para ti!</h2><p>Cuéntanos qué producto necesitas. Si no está en nuestro catálogo, puedes consultarlo y encargarlo directamente con nosotros.</p>
+          <form id="requestForm" class="request-form">
+            <label>¿Qué producto estás buscando?<input id="requestedProduct" required maxlength="100" placeholder="Ej. lámpara de escritorio"></label>
+            <label>Cuéntanos un poco más <textarea id="requestDetails" rows="2" maxlength="400" placeholder="Marca, color, referencia o cualquier detalle (opcional)"></textarea></label>
+            <button class="button button-primary" type="submit">Consultar por WhatsApp <span>↗</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-wrap" id="nosotros">
+      <span class="eyebrow">MUNDO MACA 11.11</span><h2>Pequeños hallazgos,<br><em>grandes sonrisas.</em></h2>
+      <p>Somos una tienda de variedades que busca acercarte productos útiles, novedosos y especiales a precios accesibles. ¿Tienes algo en mente? ¡Hablemos!</p>
+      <a class="text-link" href="#encargos">Cuéntanos qué buscas →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand brand-footer" href="#"><span class="brand-mark">M<span>11</span></span><span class="brand-copy"><strong>Mundo Maca</strong><small>11.11 · Variedades</small></span></a><p>Hecho con ♡ para encontrar eso que te encanta.</p><small>© <span id="year"></span> Mundo Maca 11.11</small></footer>
+
+  <div class="drawer-backdrop hidden" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Mi pedido" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">MUNDO MACA 11.11</span><h2>Mi pedido <span id="drawerCount">(0)</span></h2></div><button class="close-button" id="closeCart" aria-label="Cerrar carrito">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>🛍️</span><h3>Tu pedido está vacío</h3><p>Agrega productos del catálogo para comenzar.</p><button class="button button-secondary" id="continueShopping">Explorar productos</button></div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total"><span>Total estimado</span><strong id="cartTotal">$0</strong></div>
+      <p>El negocio confirmará disponibilidad, envío y forma de pago por WhatsApp.</p>
+      <button class="button button-primary button-full" id="checkoutButton">Enviar pedido por WhatsApp ↗</button>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
