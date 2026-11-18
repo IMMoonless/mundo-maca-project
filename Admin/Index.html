@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e85d9e">
+  <title>Administración | Mundo Maca 11.11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="admin.css">
+  <script defer src="admin.js"></script>
+</head>
+<body class="admin-body">
+  <header class="admin-top"><a class="brand" href="../index.html"><span class="brand-mark">M<span>11</span></span><span class="brand-copy"><strong>Mundo Maca</strong><small>Administración</small></span></a><a class="back-store" href="../index.html">← Ver tienda</a></header>
+  <main class="admin-main">
+    <section class="admin-login" id="loginPanel">
+      <div class="login-mark">M<span>11.11</span></div><span class="eyebrow">PANEL DE CONTROL</span><h1>¡Hola de nuevo!</h1><p>Ingresa para administrar el catálogo de Mundo Maca 11.11.</p>
+      <form id="loginForm"><label>Correo electrónico<input id="adminEmail" type="email" required autocomplete="username" placeholder="admin@mundomaca.com"></label><label>Contraseña<input id="adminPassword" type="password" required autocomplete="current-password" placeholder="Contraseña de demostración"></label><button class="button button-primary button-full">Ingresar al panel →</button><p class="login-error hidden" id="loginError">Correo o contraseña incorrectos.</p></form>
+      <div class="prototype-warning">Prototipo local: las credenciales de demostración están documentadas en README. No uses este acceso en producción. La autenticación real se implementará con Supabase.</div>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="dashboard-heading"><div><span class="eyebrow">MUNDO MACA 11.11</span><h1>Administrar catálogo</h1><p>Gestiona los productos que ven tus clientes.</p></div><button class="button button-quiet" id="logoutButton">Cerrar sesión</button></div>
+      <div class="admin-stats"><div><small>Productos registrados</small><strong id="statProducts">0</strong></div><div><small>Disponibles</small><strong id="statAvailable">0</strong></div><div><small>Agotados</small><strong id="statOut">0</strong></div></div>
+      <div class="admin-content-grid">
+        <section class="admin-panel product-editor"><div class="panel-heading"><div><span class="eyebrow">CATÁLOGO</span><h2 id="formTitle">Agregar producto</h2></div></div>
+          <form id="productForm">
+            <input type="hidden" id="productId">
+            <label>Nombre del producto<input id="productName" required maxlength="80" placeholder="Ej. Botella térmica"></label>
+            <div class="form-two"><label>Precio (COP)<input id="productPrice" type="number" min="0" step="100" required placeholder="25000"></label><label>Categoría<select id="productCategory" required></select></label></div>
+            <label>Descripción<textarea id="productDescription" rows="2" maxlength="180" placeholder="Describe brevemente el producto"></textarea></label>
+            <div class="form-two"><label>Emoji / ícono<input id="productEmoji" maxlength="8" value="🎁" placeholder="🎁"></label><label>URL de imagen<input id="productImage" type="url" placeholder="https://..."></label></div>
+            <div class="form-checks"><label><input type="checkbox" id="productStock" checked> Disponible</label><label><input type="checkbox" id="productFeatured"> Destacado</label></div>
+            <div class="form-actions"><button class="button button-primary" type="submit" id="saveProduct">Guardar producto</button><button class="button button-quiet hidden" type="button" id="cancelEdit">Cancelar</button></div>
+          </form>
+          <div class="category-manager"><h3>Administrar categorías</h3><form id="categoryForm"><input id="newCategory" maxlength="30" placeholder="Nueva categoría" required><button class="button button-secondary">Agregar</button></form><div id="categoryAdminList" class="category-admin-list"></div></div>
+        </section>
+        <section class="admin-panel product-manager"><div class="panel-heading"><div><span class="eyebrow">INVENTARIO</span><h2>Mis productos</h2></div><input id="adminSearch" class="admin-search" placeholder="Buscar..."></div><div id="adminProductList" class="admin-product-list"></div></section>
+      </div>
+      <p class="admin-footnote">Los cambios se guardan en el almacenamiento local de este navegador. Para que sean visibles desde otros dispositivos, conectaremos Supabase antes de publicar.</p>
+    </section>
+  </main>
+</body>
+</html>
